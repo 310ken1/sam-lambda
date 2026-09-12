@@ -1,0 +1,22 @@
+# AWS SAM CLI 設定ファイル
+# https://docs.aws.amazon.com/ja_jp/serverless-application-model/latest/developerguide/serverless-sam-cli-config.html
+version = 0.1
+
+# ビルド設定
+# https://docs.aws.amazon.com/ja_jp/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-build.html
+[default.build.parameters]
+debug = true  # デバッグロギング
+use_container = true  # ビルドコンテナ
+cached = false  # ビルドキャッシュ
+parallel = true  # 並列ビルド
+
+# デプロイ設定
+# https://docs.aws.amazon.com/ja_jp/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-deploy.html
+[default.deploy.parameters]
+debug = true  # デバッグロギング
+stack_name = "sam-lambda-dev"  # デプロイ先のCloudFormationスタック名
+region = "ap-northeast-1"  # デプロイ先リージョン
+resolve_s3 = true  # デプロイ時にS3バケットを自動作成
+capabilities = "CAPABILITY_IAM"
+confirm_changeset = true  # デプロイ前の変更セット確認
+parameter_overrides = ["Environment=dev", "DeletionProtection=false"]  # デプロイ時のパラメータ上書き

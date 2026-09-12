@@ -1,0 +1,53 @@
+{
+  "name": "SAM Lambda開発環境",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspace",
+  "remoteUser": "vscode",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // Python
+        "ms-python.python",
+        "ms-python.debugpy",
+        "astral-sh.ty",
+        "charliermarsh.ruff",
+        "njpwerner.autodocstring",
+        "esbenp.prettier-vscode",
+        // typescript
+        "oxc.oxc-vscode",
+        // 開発支援ツール
+        "streetsidesoftware.code-spell-checker",
+        "redhat.vscode-yaml",
+        "tombi-toml.tombi",
+        "uctakeoff.vscode-counter",
+        "usernamehw.errorlens",
+        "hverlin.mise-vscode",
+        // AWS
+        "amazonwebservices.aws-toolkit-vscode",
+        // Markdown
+        "jebbs.plantuml",
+        "bierner.markdown-mermaid",
+        "DavidAnson.vscode-markdownlint",
+        "TakumiI.markdowntable",
+        "mushan.vscode-paste-image",
+        // yaml
+        "redhat.vscode-yaml",
+        // Docker
+        "ms-azuretools.vscode-containers",
+        // ドキュメント
+        "hediet.vscode-drawio",
+        "42Crunch.vscode-openapi",
+        "janisdd.vscode-edit-csv",
+        // テスト
+        "humao.rest-client"
+      ],
+      "settings": {
+        // OpenAPI Editor設定
+        "openapi.defaultPreviewRenderer": "redoc"
+      }
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/postCreateCommand.sh",
+  "postStartCommand": "bash .devcontainer/postStartCommand.sh"
+}

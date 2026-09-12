@@ -1,0 +1,62 @@
+{
+  // ファイル設定
+  "files.autoSave": "afterDelay", // 自動保存(任意の時間経過)
+  "files.insertFinalNewline": true, // ファイルの末尾に自動で改行を追加
+  // エディタ設定
+  "editor.tabSize": 2, // インデントを2スペースに統一
+  "editor.formatOnSave": true, // ファイルを保存するたびに自動でコードを整形
+  // python設定
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "python.languageServer": "None",
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "python.experiments.optInto": [
+    "pythonTestAdapter"
+  ],
+  "python.analysis.extraPaths": [
+    "./src",
+    "./tests"
+  ],
+  "ruff.organizeImports": true,
+  // TypeScript設定
+  "[typescript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode",
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode",
+  },
+  // JavaScript設定
+  "[javascript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode",
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode",
+  },
+  // yaml設定
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.formatOnSave": true
+  },
+  // json設定
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.formatOnSave": true
+  },
+  // Docker設定
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-containers",
+    "editor.formatOnSave": true
+  },
+}

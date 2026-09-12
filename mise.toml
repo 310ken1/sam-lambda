@@ -1,0 +1,48 @@
+[tools]
+aws = { version = "latest", symlink_bins = "true" }
+aws-sam = { version = "latest", symlink_bins = "true" }
+node = "latest"
+python = "latest"
+uv = "latest"
+
+[env]
+VIRTUAL_ENV = "/workspace/.venv"
+UV_VENV_CLEAR = "1"
+SAM_CLI_CONTAINER_CONNECTION_TIMEOUT = 60
+SAM_CLI_TELEMETRY = 0
+
+[tasks.test]
+description = "テスト実行（カバレッジ出力あり）"
+run = """
+pytest -v --cov=src --cov-report=html tests
+"""
+
+[tasks.build]
+description = "ビルド実行"
+run = """
+sam build --base-dir \"${WINDOWS_VOLUME_BASEDIR}\"
+"""
+
+[tasks.local]
+description = "APIサーバ起動"
+run = """ 
+AWS_ACCESS_KEY_ID=dummy \
+AWS_SECRET_ACCESS_KEY=dummy \
+AWS_SESSION_TOKEN=dummy \
+sam local start-api \
+  --debug \
+  --container-host="host.docker.internal" \
+  --docker-volume-basedir="${WINDOWS_VOLUME_BASEDIR}/.aws-sam/build"
+"""
+
+[tasks.deploy]
+description = "デプロイ実行"
+run = """
+sam deploy
+"""
+
+[tasks.delete]
+description = "スタック削除"
+run = """
+sam delete
+"""

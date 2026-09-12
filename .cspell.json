@@ -1,0 +1,18 @@
+{
+  "version": "0.2",
+  "words": [
+    "winget",
+    "venv",
+    "pytest",
+    "pydantic",
+    "MS-CEINTL",
+    "vscode-remote-extensionpack",
+    "tonistiigi",
+    "binfmt",
+  ],
+  "ignorePaths": [
+    ".cspell.json",
+    ".devcontainer/**",
+    "pyproject.toml"
+  ]
+}
